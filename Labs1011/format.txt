@@ -5,10 +5,10 @@
 *Name: ${USER} 
 *Created ${DATE}
 */
+
 #if (${PACKAGE_NAME} && ${PACKAGE_NAME} != "")package ${PACKAGE_NAME};#end
 #parse("File Header.java")
-public class ${NAME} {
-}
+
 /*
 *  Course CS1011-051
 *  Fall 2020-2021
@@ -16,3 +16,6 @@ public class ${NAME} {
 *  @author ${USER}
 *  @version created on ${DATE} at ${TIME}
 */
+
+public class ${NAME} {
+}
