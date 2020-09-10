@@ -20,3 +20,7 @@ public class TruthsAndLie {
         System.out.println("I am on the swimming team \r\nI live in Grohmann\r\nI enjoy sleeping");
     }
 }
+
+//Partner: Josiah Clausen
+// Guesses to find my lie: 1
+// Guesses to find his lie: 3
