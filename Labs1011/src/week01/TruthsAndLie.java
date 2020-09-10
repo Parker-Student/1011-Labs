@@ -16,4 +16,7 @@ package week01;
  */
 
 public class TruthsAndLie {
+    public static void main(String[] args) {
+        System.out.println("I am on the swimming team \r\nI live in Grohmann\r\nI enjoy sleeping");
+    }
 }
