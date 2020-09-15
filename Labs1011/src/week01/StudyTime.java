@@ -17,7 +17,7 @@ package week01;
 
 import java.util.Scanner;
 
-public class StudyTime {
+public class  StudyTime {
     public static void main(String[] args) {
         // Create a "reference variable"/object to gather data
         // from the keyboard
