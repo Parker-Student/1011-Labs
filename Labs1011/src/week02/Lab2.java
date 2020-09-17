@@ -10,7 +10,7 @@ package week02;
 /*
  *  Course CS1011-051
  *  Fall 2020-2021
- *  Lab2 purpose: allow the user to preform varried opperations
+ *  Lab2 purpose: allow the user to preform various operations
  *  @author Parker
  *  @version created on 9/16/2020 at 1:13 PM
  */
@@ -21,7 +21,7 @@ public class Lab2 {
 
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
-        int selection = 0;
+        int selection;
         do {
 
             System.out.println("Please enter a number to preform the selected operation: \r\n" +
@@ -62,7 +62,6 @@ public class Lab2 {
                     System.out.println("Enter a denominator:");
                     System.out.println(fraction(num, in.nextInt()));
                     break;
-
             }
 
         } while (selection != 6);
