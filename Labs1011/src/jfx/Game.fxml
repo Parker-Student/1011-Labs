@@ -11,7 +11,7 @@
 
 <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="jfx.Controller">
    <children>
-      <Pane prefHeight="600.0" prefWidth="600.0" />
+      <Pane fx:id="pane" onMouseClicked="#onClick" prefHeight="600.0" prefWidth="600.0" />
       <GridPane accessibleRole="BUTTON">
         <columnConstraints>
           <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -25,8 +25,8 @@
          <children>
             <Text strokeType="OUTSIDE" strokeWidth="0.0" text="White:" />
             <Text layoutX="10.0" layoutY="30.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Black:" GridPane.columnIndex="1" />
-            <TextArea editable="false" prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="1" GridPane.rowSpan="2" />
-            <TextArea editable="false" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1" GridPane.rowSpan="2" />
+            <TextArea fx:id="white" editable="false" prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="1" GridPane.rowSpan="2" />
+            <TextArea fx:id="black" editable="false" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1" GridPane.rowSpan="2" />
          </children>
       </GridPane>
    </children>

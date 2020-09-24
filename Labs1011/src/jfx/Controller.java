@@ -15,5 +15,22 @@ package jfx;
  *  @version created on 9/16/2020 at 7:32 PM
  */
 
+import javafx.fxml.FXML;
+import javafx.scene.layout.Pane;
+
+import java.awt.*;
+import java.awt.event.MouseEvent;
+
 public class Controller {
+    @FXML
+    private Pane pane;
+    @FXML
+    private TextArea white;
+    @FXML
+    private TextArea black;
+
+    @FXML
+    public void onClick(MouseEvent mouseEvent){
+
+    }
 }
