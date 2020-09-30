@@ -19,15 +19,12 @@ import java.util.Scanner;
 
 public class test {
     public static void main(String[] args) {
-     Date myStartTime = new Date();
-     long startTime =myStartTime.getTime();
-     long k=0;
-     while (k<1000000000){
-         k++;
-     }
-     Date myEndTime = new Date();
-     long endTime=myEndTime.getTime();
-     System.out.println("The elapsed time is " +
-             "" + (endTime - startTime) + "milli sec");
+        int a = 7;
+        double b = 0.4;
+        System.out.println(
+                (a % 2 - 2 % a)
+        );
+
+
     }
     }

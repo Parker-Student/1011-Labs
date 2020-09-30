@@ -62,7 +62,6 @@ public class Lab2 {
     public static boolean inputLoop() {
         Scanner in = new Scanner(System.in);
        System.out.println(menu());
-
         switch (Integer.parseInt(in.nextLine())) {
             case 1:
                 System.out.println("Enter a number you wish to negate:");
