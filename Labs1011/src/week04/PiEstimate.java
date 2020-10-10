@@ -24,21 +24,29 @@ public class PiEstimate {
         Scanner in = new Scanner(System.in);
 
         double pointsIn = 0;
-        double amount = 0;
+        double pointsOut = 0;
         double x;
         double y;
 
         System.out.println("How many points: ");
         int input = in.nextInt();
 
+        while(input > 0){
+            x = rand.nextDouble();
+            y = rand.nextDouble();
 
+            if (Math.sqrt((x * x) + (y * y)) <= 1) {
+                ++pointsIn;
+            } else {
+                ++pointsOut;
+            }
+            --input;
+
+        }
+        double Pi = (pointsIn / (pointsIn+pointsOut)) *4;
 
         System.out.println("The points in the circle were: " + pointsIn);
-        System.out.println("The points outside the circle was: " + amount);
-
-
-
-
-
+        System.out.println("The points outside the circle was: " + pointsOut);
+        System.out.println("Pi Estimate " + Pi);
     }
 }
