@@ -20,11 +20,16 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class GrowthRate {
+
+    //Output Coloring
     private static final String ANSI_RED = "\u001B[31m";
     private static final String ANSI_GREEN = "\u001B[32m";
     private static final String ANSI_RESET = "\u001B[0m";
-    private static final int linearRange = 10000;
+    //Range in which the linear column can increase
+    private static final int linearRange = 35000;
+    //Rate at which the exponential column increases
     private static final double exponentialRate = .01;
+    //Stores the randomly generated linear rate
     private static int linearRate;
 
     public static void main(String[] args) {
@@ -43,62 +48,56 @@ public class GrowthRate {
         return input;
     }
 
-
     public static int calculate() {
         Random random = new Random();
         NumberFormat Format = NumberFormat.getCurrencyInstance();
 
-        final int lifeSpan = 500;
+        final int lifeSpan = 250;
 
-        int weeks = random.nextInt(lifeSpan);
+        //Random Number Generation
         linearRate = random.nextInt(linearRange);
-        int i = weeks; //counter
-        int endWeeks; //return weeks
+        int weeks = random.nextInt(lifeSpan);
+
+        //Counter
+        int i = weeks;
 
         while (i > 0) {
             --i;
 
-            double linear = linearRate * (weeks - i);
-            double exponential = exponentialRate * (Math.pow(2, (weeks - i) - 1));
-
+            int weekCount = weeks - i;
+            double linear = linearRate * (weekCount);
+            double exponential = exponentialRate * (Math.pow(2, (weekCount) - 1));
 
             if (linear > exponential) {
                 System.out.println(
-                        "Week " + (weeks - i) + ": " + ANSI_GREEN +
+                        "Week " + (weekCount) + ": " + ANSI_GREEN +
                                 "Linear: " + Format.format(linear) + ANSI_RED +
                                 " Exponential: " + Format.format(exponential) + ANSI_RESET);
             } else {
-
-                endWeeks = weeks - i;
                 System.out.println(
-                        "Week " + endWeeks + ": " + ANSI_RED +
+                        "Week " + (weekCount) + ": " + ANSI_RED +
                                 "Linear: " + Format.format(linear) + ANSI_GREEN +
                                 " Exponential: " + Format.format(exponential) + ANSI_RESET + "\n");
-
-                i = 0;
-
-
+                                i = 0;
             }
-
-
         }
-
-
         return weeks;
-
     }
 
     public static void results() {
         Scanner in = new Scanner(System.in);
+        // USD format
         NumberFormat Format = NumberFormat.getCurrencyInstance();
+
+        //calls the methods
         int input = menuInput();
         int weeks = calculate();
 
         double linear = linearRate * weeks;
         double exponential = exponentialRate * (Math.pow(2, weeks - 1));
-
         double difference = linear - exponential;
 
+        // The four outcomes
         if (input == 1 && 0 > difference) {
             System.out.println("Got unlucky and missed out on: " + Format.format(Math.abs(difference)));
 
@@ -110,7 +109,7 @@ public class GrowthRate {
 
         } else if (input == 2 && 0 < difference) {
             System.out.println("Got unlucky and missed out on: " + Format.format(Math.abs(difference)));
-
+        // Re-runs the programs if errors occur
         } else {
             results();
         }
@@ -119,11 +118,11 @@ public class GrowthRate {
         System.out.println("\nEnter 1 to play again: ");
 
         int k = in.nextInt();
-        ;
-        while (k == 1) {
+
+        if(k == 1) {
             results();
         }
-        ;
+
 
     }
 }
