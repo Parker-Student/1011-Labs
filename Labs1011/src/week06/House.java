@@ -6,7 +6,7 @@
  *Created 10/14/2020
  */
 
-package week6;
+package week06;
 /*
  *  Course CS1011-051
  *  Fall 2020-2021

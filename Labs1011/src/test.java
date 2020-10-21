@@ -19,16 +19,13 @@ import java.util.Scanner;
 import java.math.*;
 import java.util.*;
 public class test {
+
     public static void main(String[] args) {
 
-        Random random = new Random(123);
+        String name = "Grace Hopper";
+
+        System.out.println(name.indexOf(' '));
 
 
-        int i = 1000;
-        while(i >0){
-            int c = random.nextInt();
-            System.out.println(c);
-            --i;
-        }
     }
 }
