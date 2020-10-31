@@ -18,39 +18,30 @@ package week07;
 import java.util.Random;
 
 public class Die {
-    private int numSides;
-    private int currentSide;
-    private Random random;
+    private int numSides = 0;
+    private int currentValue;
+    private Random generator;
 
-    public Die(int numSides){
-        //Die die = new Die();
-        this.numSides = numSides;
-        random = new Random();
-        currentSide = rollDie();
-    }
+    public Die(int numSides) {
+        final int defaultValue = 6;
+        final int maxSides = 100;
+        final int minSides = 2;
+        if (numSides < minSides || numSides > maxSides) {
+            this.numSides = defaultValue;
 
-    public int getNumSides() {
-        return numSides;
-    }
-
-    public void setNumSides(int numSides){
-        this.numSides = numSides;
-    }
-
-    public int getCurrentValue(){
-        return currentSide;
-    }
-
-    public int rollDie(){
-
-        return random.nextInt(numSides)+1;
+        } else {
+            this.numSides = numSides;
+        }
 
     }
 
-    @Override
-    public String toString(){
-        return "Your called a " + currentSide;
+    public int getCurrentValue() {
+        return currentValue;
     }
 
+    public void roll() {
+        generator = new Random();
+        currentValue = generator.nextInt(numSides) + 1;
+    }
 
 }

@@ -1,4 +1,4 @@
-package midterm;/*
+package midterm01;/*
  *Course: CS1011-051
  *Fall 2020-2021
  *File header contains class UserPrint
